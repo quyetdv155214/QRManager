@@ -1,20 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="viewModel"
             type="com.example.quyet.qrappmanager.viewmodel.ActivityHomeViewModel"/>
     </data>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.quyet.qrappmanager.activity.HomeActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+    <RelativeLayout
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.example.quyet.qrappmanager.view.SquareRippleView
+                    android:id="@+id/rlStats"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_curved_white"
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    app:rv_color="@color/colorPrimary"
+                    app:rv_rippleDuration="100"
+                    app:rv_zoom="true"
+                    app:rv_zoomDuration="50"
+                    app:rv_zoomScale="0.95">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:id="@+id/ivHomeHot"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_stats_black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ivHomeHot"
+                            android:layout_centerHorizontal="true"
+                            android:text="Stats"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                </com.example.quyet.qrappmanager.view.SquareRippleView>
+
+                <com.example.quyet.qrappmanager.view.SquareRippleView
+                    android:id="@+id/rlMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_curved_white"
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    app:rv_color="@color/colorPrimary"
+                    app:rv_rippleDuration="100"
+                    app:rv_zoom="true"
+                    app:rv_zoomDuration="50"
+                    app:rv_zoomScale="0.95">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/ivMenu"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:background="@drawable/ic_restaurant" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ivMenu"
+                            android:layout_centerHorizontal="true"
+                            android:text="Menu"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </com.example.quyet.qrappmanager.view.SquareRippleView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.example.quyet.qrappmanager.view.SquareRippleView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_curved_white"
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    app:rv_rippleDuration="100"
+                    app:rv_zoomDuration="50"
+                    app:rv_zoomScale="0.95"
+                    app:rv_zoom="true"
+                    app:rv_color="@color/colorPrimary">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/ivHomeNearBy"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_my_location_gray_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ivHomeNearBy"
+                            android:layout_centerHorizontal="true"
+                            android:text="Near Me"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </com.example.quyet.qrappmanager.view.SquareRippleView>
+
+                <com.example.quyet.qrappmanager.view.SquareRippleView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_curved_white"
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    app:rv_rippleDuration="100"
+                    app:rv_zoomDuration="50"
+                    app:rv_zoomScale="0.95"
+                    app:rv_zoom="true"
+                    app:rv_color="@color/colorPrimary">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/ivHomeAccount"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_person_gray_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ivHomeAccount"
+                            android:layout_centerHorizontal="true"
+                            android:text="Account"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </com.example.quyet.qrappmanager.view.SquareRippleView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
 </layout>
