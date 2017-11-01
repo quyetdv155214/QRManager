@@ -1,6 +1,7 @@
 package com.example.quyet.qrappmanager.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,11 +19,6 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
 
     private static final String TAG = "loginActivity";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-    }
 
     @Override
     public int getLayoutId() {
@@ -53,7 +49,9 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
 
     public void onLoginSuccess() {
         getBinding().rlLogin.setEnabled(true);
-        finish();
+//        finish();
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        startActivity(intent);
     }
 
     public void onLoginFailed() {
@@ -94,17 +92,17 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
         getBinding().rlLogin.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
-                Log.d(TAG, "onComplete: ");
+                login();
             }
         });
 
         getBinding().linkSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+
             }
         });
-        Log.d(TAG, "setEvent: done");
+
     }
 
 
@@ -117,7 +115,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
         }
 
         final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
-                R.style.AppTheme);
+                ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();

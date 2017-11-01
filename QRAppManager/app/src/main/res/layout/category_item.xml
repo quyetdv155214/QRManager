@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.quyet.qrappmanager.viewmodel.ItemCategoryViewModel"/>
+        <variable
+            name="listener"
+            type="com.example.quyet.qrappmanager.activity.MenuActivity.CategoryListener"/>
+    </data>
+    <RelativeLayout
+        android:onClick="@{()-> listener.onItemClick(viewModel.category)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvCateName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.catename}"
+                    android:textSize="18sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/tvNumOfItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/tvCateName"
+                    android:text="@{viewModel.itemCount}" />
+            </RelativeLayout>
+
+            <com.andexert.library.RippleView
+                android:id="@+id/rlEdit"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+                <ImageView
+
+                    android:padding="4dp"
+                    android:layout_centerInParent="true"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:elevation="6dp"
+                    android:src="@drawable/ic_edit_black_24dp" />
+            </com.andexert.library.RippleView>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
