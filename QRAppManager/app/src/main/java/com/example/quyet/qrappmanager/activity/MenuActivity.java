@@ -1,9 +1,11 @@
 package com.example.quyet.qrappmanager.activity;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,6 +24,8 @@ import java.util.List;
 
 public class MenuActivity extends BaseActivity<ActivityMenuBinding, ActivityMenuViewModel> implements View.OnClickListener {
 
+
+    private static final String TAG = "Menu activity";
 
     @Override
     public int getLayoutId() {
@@ -55,25 +59,9 @@ public class MenuActivity extends BaseActivity<ActivityMenuBinding, ActivityMenu
         getBinding().tlDetailViewPagerTab.setTabMode(TabLayout.MODE_SCROLLABLE);
         getBinding().vpCategory.setOffscreenPageLimit(0);
         getBinding().ivDefaultMenuBack.setOnClickListener(this);
+        getBinding().fabAddCategory.setOnClickListener(this);
     }
 
-
-//    private void setRecycleView() {
-//        List<ItemCategoryViewModel> menuActivityList = new ArrayList<>();
-//        menuActivityList.add(new ItemCategoryViewModel(new MenuCategory("cate 1", new ArrayList<Item>())));
-//        menuActivityList.add(new ItemCategoryViewModel(new MenuCategory("cate 2", new ArrayList<Item>())));
-//        menuActivityList.add(new ItemCategoryViewModel(new MenuCategory("cate 3", new ArrayList<Item>())));
-//        menuActivityList.add(new ItemCategoryViewModel(new MenuCategory("cate 4", new ArrayList<Item>())));
-//        menuActivityList.add(new ItemCategoryViewModel(new MenuCategory("cate 5", new ArrayList<Item>())));
-//
-//
-//        BaseSingleTypeRecyclerViewAdapter<ItemCategoryViewModel> myRvAdapter = new BaseSingleTypeRecyclerViewAdapter<>(this, R.layout.category_item);
-//        myRvAdapter.addAll(menuActivityList);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
-//        myRvAdapter.setPresenter(new CategoryListener());
-//        getBinding().rvCategory.setLayoutManager(layoutManager);
-//        getBinding().rvCategory.setAdapter(myRvAdapter);
-//    }
 
     private void setEvent() {
 
@@ -85,8 +73,27 @@ public class MenuActivity extends BaseActivity<ActivityMenuBinding, ActivityMenu
             case R.id.ivDefaultMenuBack:
                 onBackPressed();
                 break;
+            case R.id.fabAddCategory :
+                addCategory();
         }
     }
+
+    private void addCategory() {
+        Intent intent = new Intent(this, AddCategoryActivity.class);
+        startActivity(intent);
+    }
+//    public class FabListener implements View.OnClickListener{
+//        public void onFabClick(){
+//            int id = getBinding().tlDetailViewPagerTab.getId();
+//            Toast.makeText(MenuActivity.this, "Fab Click" + id, Toast.LENGTH_SHORT).show();
+//
+//        }
+//
+//        @Override
+//        public void onClick(View v) {
+//
+//        }
+//    }
 
 
 }

@@ -1,36 +1,31 @@
-package com.example.quyet.qrappmanager.model;
+package com.example.quyet.qrappmanager.viewmodel;
+
+import com.example.quyet.qrappmanager.model.Item;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
- * Created by Quyet on 31/10/2017.
+ * Created by Quyet on 02/11/2017.
  */
 
-public class Item {
+public class ItemViewModel extends BaseViewModel{
     private String itemId;
     private String itemName;
     private float itemPrice;
     private float itemDiscount;
     private String itemDes;
     private List<String> imageURL;
+    private Item item;
 
+    public ItemViewModel(Item item) {
+        this.item = item;
+        this.itemId = item.getItemId();
+        this.itemName = item.getItemName();
+        this.itemPrice = item.getItemPrice();
+        this.itemDiscount = item.getItemDiscount();
+        this.itemDes = item.getItemDes();
+        this.imageURL = item.getImageURL();
 
-
-    public Item( String itemName, float itemPrice, float itemDiscount, String itemDes) {
-        this.itemId = UUID.randomUUID().toString();;;
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
-        this.itemDiscount = itemDiscount;
-        this.itemDes = itemDes;
-    }
-
-    public Item(String itemName, float itemPrice, float itemDiscount, String itemDes, List<String> imageURL) {
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
-        this.itemDiscount = itemDiscount;
-        this.itemDes = itemDes;
-        this.imageURL = imageURL;
     }
 
     public String getItemId() {
@@ -79,5 +74,13 @@ public class Item {
 
     public void setImageURL(List<String> imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

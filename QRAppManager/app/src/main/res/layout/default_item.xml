@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.quyet.qrappmanager.viewmodel.ItemViewModel">
+
+        </variable>
+
+    </data>
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/ivPic"
+        android:src="@drawable/ic_cake"
+        android:padding="5dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp" />
+    <LinearLayout
+        android:layout_toEndOf="@id/ivPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+
+            android:layout_weight="9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvItemName"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvItemrPice"
+                android:textSize="16sp"
+                android:layout_below="@id/tvItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/ic_edit_black_24dp"
+            android:padding="10dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp" />
+    </LinearLayout>
+
+</RelativeLayout>
+</layout>

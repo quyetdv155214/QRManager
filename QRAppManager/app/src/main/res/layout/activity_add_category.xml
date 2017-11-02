@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.quyet.qrappmanager.viewmodel.ActivityAddCategoryViewModel"/>
+    </data>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.quyet.qrappmanager.activity.AddCategoryActivity">
+        <android.support.v7.widget.Toolbar
+            android:background="@color/colorPrimary"
+            android:id="@+id/tbAddCategory"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivDefaultAddCateBack"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="5dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_chevron_left_white_24dp" />
+                <TextView
+                    android:textColor="@color/white"
+                    android:text="Add Category"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="22sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@drawable/ic_check_white_24dp"
+                    android:id="@+id/ivbtnOK"
+                    android:padding="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp" />
+                <ImageView
+                    android:layout_toStartOf="@id/ivbtnOK"
+                    android:src="@drawable/ic_delete_white_24dp"
+                    android:id="@+id/ivbtnDel"
+                    android:padding="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp" />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@id/tbAddCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvCateTitle"
+                android:text="@string/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/etCateTitle"
+                android:layout_below="@id/tvCateTitle"
+                android:layout_width="match_parent"
+                android:layout_height="56dp" />
+            <TextView
+                android:layout_below="@id/etCateTitle"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvCateType"
+                android:text="@string/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Spinner
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_height="30dp"
+                android:id="@+id/spCateType"
+                android:layout_width="match_parent"
+
+                android:layout_below="@+id/tvCateType"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_below="@id/spCateType"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvCateMenu"
+                android:text="Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Spinner
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_height="30dp"
+                android:id="@+id/spCateMenu"
+                android:layout_below="@id/tvCateMenu"
+                android:layout_width="match_parent" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>
