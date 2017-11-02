@@ -12,6 +12,7 @@ import java.util.List;
  */
 
 public class ItemCategoryViewModel extends BaseViewModel {
+    private String cateID;
     private String catename;
     private List<Item> items;
     private MenuCategory category;
@@ -21,6 +22,15 @@ public class ItemCategoryViewModel extends BaseViewModel {
         this.catename = category.getCatename();
         this.items = category.getItems();
         this.category = category;
+        this.cateID = category.getCateID();
+    }
+
+    public String getCateID() {
+        return cateID;
+    }
+
+    public void setCateID(String cateID) {
+        this.cateID = cateID;
     }
 
     public String getItemCount() {

@@ -45,6 +45,7 @@ public class BaseSingleTypeRecyclerViewAdapter<T> extends BaseRecyclerViewAdapte
         notifyDataSetChanged();
     }
 
+
     public void set(List<T> listViewModel){
         listItem = listViewModel;
         notifyDataSetChanged();

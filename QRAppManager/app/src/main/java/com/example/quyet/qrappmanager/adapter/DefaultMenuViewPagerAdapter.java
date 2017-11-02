@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.quyet.qrappmanager.fragment.BaseFragment;
+import com.example.quyet.qrappmanager.fragment.DefaultMenuFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,12 @@ public class DefaultMenuViewPagerAdapter extends FragmentPagerAdapter {
 
     public DefaultMenuViewPagerAdapter(FragmentManager fm) {
         super(fm);
-
+        DefaultMenuFragment fragment1 = new DefaultMenuFragment();
+        fragment1.setFragmentTitle("Menu 1");
+        DefaultMenuFragment fragment2 = new DefaultMenuFragment();
+        fragment2.setFragmentTitle("Menu 2");
+        list.add(fragment1);
+        list.add(fragment2);
     }
 
     @Override

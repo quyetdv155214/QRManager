@@ -8,9 +8,7 @@
         <variable
             name="viewModel"
             type="com.example.quyet.qrappmanager.viewmodel.ActivityMenuViewModel" />
-        <variable
-            name="layoutManager"
-            type="android.support.v7.widget.RecyclerView.LayoutManager" />
+
     </data>
 
     <RelativeLayout
@@ -18,20 +16,87 @@
         android:layout_height="match_parent"
         tools:context="com.example.quyet.qrappmanager.activity.MenuActivity">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvCategory"
+        <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"
-            android:scrollbars="vertical" />
+            android:clipToPadding="false">
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:id="@+id/vBackgroundDefaultMenuToolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="@color/colorPrimary"
+                        app:layout_collapseMode="pin" />
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/tbDefaultMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="24dp"
+                        app:contentInsetStart="0dp"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:id="@+id/ivDefaultMenuBack"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/ic_chevron_left_white_24dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Hà Nội Phố"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
 
+                    </android.support.v7.widget.Toolbar>
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+                <android.support.design.widget.TabLayout
+
+                    android:id="@+id/tlDetailViewPagerTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@color/colorPrimary"
+                    app:tabIndicatorColor="@color/colorAccentLightest"
+                    app:tabSelectedTextColor="@color/colorAccentLightest"
+                    app:tabTextColor="@color/white">
+
+                </android.support.design.widget.TabLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.view.ViewPager
+
+                android:id="@+id/vpCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            </android.support.v4.view.ViewPager>
+
+        </android.support.design.widget.CoordinatorLayout>
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_white_24dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="20dp"
-            android:src="@drawable/ic_add_white_24dp" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="19dp" />
+
+
 
     </RelativeLayout>
 </layout>

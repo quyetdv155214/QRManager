@@ -9,12 +9,22 @@ import java.util.List;
 public class MenuCategory {
     private String Catename;
     private List<Item> items;
+    private String cateID;
 
 
     public MenuCategory(String catename, List<Item> items) {
         Catename = catename;
         this.items = items;
     }
+
+    public String getCateID() {
+        return cateID;
+    }
+
+    public void setCateID(String cateID) {
+        this.cateID = cateID;
+    }
+
     public int getItemCount(){
         return items.size();
     }
