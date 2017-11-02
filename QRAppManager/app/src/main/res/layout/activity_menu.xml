@@ -8,15 +8,19 @@
         <variable
             name="viewModel"
             type="com.example.quyet.qrappmanager.viewmodel.ActivityMenuViewModel" />
-
+        <!--<variable-->
+            <!--name="listener"-->
+            <!--type="com.example.quyet.qrappmanager.activity.MenuActivity.FabListener"/>-->
     </data>
 
     <RelativeLayout
+        android:id="@+id/rlMenuRoot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.quyet.qrappmanager.activity.MenuActivity">
 
         <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/clMenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false">
@@ -86,6 +90,7 @@
 
         </android.support.design.widget.CoordinatorLayout>
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabAddCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_white_24dp"

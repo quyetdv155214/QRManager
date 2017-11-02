@@ -55,7 +55,25 @@
                     android:elevation="6dp"
                     android:src="@drawable/ic_edit_black_24dp" />
             </com.andexert.library.RippleView>
-
+            <View
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorPrimary"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/>
+            <com.andexert.library.RippleView
+                android:id="@+id/rlDelete"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+                <ImageView
+                    android:onClick="@{()-> listener.onDeleteClick(viewModel.category)}"
+                    android:padding="5dp"
+                    android:layout_centerInParent="true"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:elevation="6dp"
+                    android:src="@drawable/ic_delete_forever_accent_24dp" />
+            </com.andexert.library.RippleView>
 
 
         </LinearLayout>
