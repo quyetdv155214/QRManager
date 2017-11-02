@@ -44,16 +44,16 @@ public class ItemViewModel extends BaseViewModel{
         this.itemName = itemName;
     }
 
-    public float getItemPrice() {
-        return itemPrice;
+    public String getItemPrice() {
+        return itemPrice +"";
     }
 
     public void setItemPrice(float itemPrice) {
         this.itemPrice = itemPrice;
     }
 
-    public float getItemDiscount() {
-        return itemDiscount;
+    public String getItemDiscount() {
+        return itemDiscount + "";
     }
 
     public void setItemDiscount(float itemDiscount) {

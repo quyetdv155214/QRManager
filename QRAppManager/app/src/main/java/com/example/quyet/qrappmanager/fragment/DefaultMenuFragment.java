@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -26,6 +27,7 @@ import android.widget.Toast;
 
 import com.example.quyet.qrappmanager.BR;
 import com.example.quyet.qrappmanager.R;
+import com.example.quyet.qrappmanager.activity.DetailCategoryActivity;
 import com.example.quyet.qrappmanager.activity.MenuActivity;
 import com.example.quyet.qrappmanager.adapter.BaseRecyclerViewAdapter;
 import com.example.quyet.qrappmanager.adapter.BaseSingleTypeRecyclerViewAdapter;
@@ -102,8 +104,9 @@ public class DefaultMenuFragment extends BaseFragment<FragmentDefaultMenuBinding
 
     public class CategoryListener implements BaseRecyclerViewAdapter.Presenter {
         public void onItemClick(MenuCategory category) {
-            Toast.makeText(getActivity(), category.getCatename(), Toast.LENGTH_SHORT).show();
-
+//            Toast.makeText(getActivity(), category.getCatename(), Toast.LENGTH_SHORT).show();
+            Intent intent  = new Intent(getActivity(), DetailCategoryActivity.class);
+            startActivity(intent);
         }
 
         public void onEditClick(MenuCategory category) {

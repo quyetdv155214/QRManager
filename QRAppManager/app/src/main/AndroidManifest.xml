@@ -21,7 +21,9 @@
         <activity android:name=".activity.ItemActivity" />
         <activity android:name=".activity.testActivity" />
         <activity android:name=".activity.AddCategoryActivity" />
-        <activity android:name=".activity.DetailCategoryActivity"></activity>
+        <activity android:name=".activity.DetailCategoryActivity">
+
+        </activity>
     </application>
 
 </manifest>

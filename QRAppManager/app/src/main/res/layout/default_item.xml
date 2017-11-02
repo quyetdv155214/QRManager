@@ -7,10 +7,13 @@
             type="com.example.quyet.qrappmanager.viewmodel.ItemViewModel">
 
         </variable>
+        <variable
+            name="listener"
+            type="com.example.quyet.qrappmanager.activity.DetailCategoryActivity.ItemListener"/>
 
     </data>
 <RelativeLayout
-
+    android:onClick="@{()-> listener.onItemClick(viewModel.item)}"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
@@ -24,16 +27,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-
             android:layout_weight="9"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:text="@{viewModel.itemName}"
                 android:id="@+id/tvItemName"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
+                android:text="@{viewModel.itemPrice}"
                 android:id="@+id/tvItemrPice"
                 android:textSize="16sp"
                 android:layout_below="@id/tvItemName"
@@ -41,6 +45,7 @@
                 android:layout_height="wrap_content" />
         </RelativeLayout>
         <ImageView
+
             android:layout_weight="1"
             android:src="@drawable/ic_edit_black_24dp"
             android:padding="10dp"
