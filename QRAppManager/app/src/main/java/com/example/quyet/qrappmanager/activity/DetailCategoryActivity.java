@@ -3,6 +3,7 @@ package com.example.quyet.qrappmanager.activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +28,7 @@ public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryB
     BaseSingleTypeRecyclerViewAdapter<ItemViewModel> adapter;
     private List<ItemViewModel> list = new ArrayList<>();
     private boolean editMode = false;
+    private String categoryId;
 
     @Override
     public int getLayoutId() {
@@ -60,6 +62,7 @@ public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryB
         getBinding().ivEdit.setOnClickListener(this);
         getBinding().ivbtnDel.setOnClickListener(this);
         getBinding().ivDefaultAddCateBack.setOnClickListener(this);
+        getBinding().fabAddItem.setOnClickListener(this);
     }
 
     private void getData() {
@@ -89,9 +92,18 @@ public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryB
                 break;
             case R.id.ivbtnDel :
                 Toast.makeText(this, "delete", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.fabAddItem :
+                addItem(categoryId);
+                break;
         }
     }
 
+    private void addItem(String categoryId) {
+        Intent intent  = new Intent(this, AddItemActivity.class);
+        intent.putExtra("categoryID", categoryId);
+        startActivity(intent);
+    }
 
     public class ItemListener implements BaseRecyclerViewAdapter.Presenter {
         public void onItemClick(Item item) {
@@ -103,6 +115,7 @@ public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryB
         }
 
     }
+
     private void setUpRecycleView(Context context) {
         adapter = new BaseSingleTypeRecyclerViewAdapter<>(context, R.layout.default_item);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);

@@ -21,10 +21,10 @@ public class DefaultMenuViewPagerAdapter extends FragmentPagerAdapter {
         super(fm);
         DefaultMenuFragment fragment1 = new DefaultMenuFragment();
         fragment1.setFragmentTitle("Menu 1");
-        DefaultMenuFragment fragment2 = new DefaultMenuFragment();
-        fragment2.setFragmentTitle("Menu 2");
+//        DefaultMenuFragment fragment2 = new DefaultMenuFragment();
+//        fragment2.setFragmentTitle("Menu 2");
         list.add(fragment1);
-        list.add(fragment2);
+//        list.add(fragment2);
     }
 
     @Override
