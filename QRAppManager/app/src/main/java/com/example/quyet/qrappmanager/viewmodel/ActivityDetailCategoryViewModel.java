@@ -5,4 +5,6 @@ package com.example.quyet.qrappmanager.viewmodel;
  */
 
 public class ActivityDetailCategoryViewModel extends BaseViewModel {
+
+
 }

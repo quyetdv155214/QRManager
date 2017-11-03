@@ -1,6 +1,7 @@
 package com.example.quyet.qrappmanager.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Quyet on 02/11/2017.
@@ -11,10 +12,10 @@ public class Menu {
     private String menuId;
     private String resId;
     private String describe;
-    private ArrayList<MenuCategory> categories;
+    private List<MenuCategory> categories;
 
 
-    public Menu(String menuName, String menuId, String resId, String describe, ArrayList<MenuCategory> categories) {
+    public Menu(String menuName, String menuId, String resId, String describe, List<MenuCategory> categories) {
         this.menuName = menuName;
         this.menuId = menuId;
         this.resId = resId;
@@ -62,7 +63,7 @@ public class Menu {
         this.describe = describe;
     }
 
-    public ArrayList<MenuCategory> getCategories() {
+    public List<MenuCategory> getCategories() {
         return categories;
     }
 

@@ -1,5 +1,9 @@
 package com.example.quyet.qrappmanager.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -70,5 +74,16 @@ public class MenuCategory {
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    @Override
+    public String toString() {
+        return "MenuCategory{" +
+                "Catename='" + Catename + '\'' +
+                ", items=" + items +
+                ", cateID='" + cateID + '\'' +
+                ", menuId='" + menuId + '\'' +
+                ", cateType='" + cateType + '\'' +
+                '}';
     }
 }

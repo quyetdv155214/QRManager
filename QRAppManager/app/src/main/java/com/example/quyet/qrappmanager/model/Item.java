@@ -80,4 +80,16 @@ public class Item {
     public void setImageURL(List<String> imageURL) {
         this.imageURL = imageURL;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemId='" + itemId + '\'' +
+                ", itemName='" + itemName + '\'' +
+                ", itemPrice=" + itemPrice +
+                ", itemDiscount=" + itemDiscount +
+                ", itemDes='" + itemDes + '\'' +
+                ", imageURL=" + imageURL +
+                '}';
+    }
 }

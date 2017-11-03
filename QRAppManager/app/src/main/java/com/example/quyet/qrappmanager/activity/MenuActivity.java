@@ -26,6 +26,7 @@ public class MenuActivity extends BaseActivity<ActivityMenuBinding, ActivityMenu
 
 
     private static final String TAG = "Menu activity";
+    public String menuName;
 
     @Override
     public int getLayoutId() {
@@ -52,7 +53,7 @@ public class MenuActivity extends BaseActivity<ActivityMenuBinding, ActivityMenu
         getSupportActionBar().hide();
         setStatusBarTranslucent(true);
         setEvent();
-//        setRecycleView();
+
         DefaultMenuViewPagerAdapter vpAdapter = new DefaultMenuViewPagerAdapter(getSupportFragmentManager());
         getBinding().vpCategory.setAdapter(vpAdapter);
         getBinding().tlDetailViewPagerTab.setupWithViewPager(getBinding().vpCategory);
@@ -82,18 +83,7 @@ public class MenuActivity extends BaseActivity<ActivityMenuBinding, ActivityMenu
         Intent intent = new Intent(this, AddCategoryActivity.class);
         startActivity(intent);
     }
-//    public class FabListener implements View.OnClickListener{
-//        public void onFabClick(){
-//            int id = getBinding().tlDetailViewPagerTab.getId();
-//            Toast.makeText(MenuActivity.this, "Fab Click" + id, Toast.LENGTH_SHORT).show();
-//
-//        }
-//
-//        @Override
-//        public void onClick(View v) {
-//
-//        }
-//    }
+
 
 
 }

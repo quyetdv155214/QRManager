@@ -33,9 +33,11 @@ import com.example.quyet.qrappmanager.adapter.BaseRecyclerViewAdapter;
 import com.example.quyet.qrappmanager.adapter.BaseSingleTypeRecyclerViewAdapter;
 import com.example.quyet.qrappmanager.databinding.FragmentDefaultMenuBinding;
 import com.example.quyet.qrappmanager.model.Item;
+import com.example.quyet.qrappmanager.model.Menu;
 import com.example.quyet.qrappmanager.model.MenuCategory;
 import com.example.quyet.qrappmanager.viewmodel.FragmentDefaultMenuViewModel;
 import com.example.quyet.qrappmanager.viewmodel.ItemCategoryViewModel;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +50,8 @@ public class DefaultMenuFragment extends BaseFragment<FragmentDefaultMenuBinding
     private List<ItemCategoryViewModel> list;
     BaseSingleTypeRecyclerViewAdapter<ItemCategoryViewModel> adapter;
     private RelativeLayout mRoot;
+    public Menu menu;
+
 
     public DefaultMenuFragment() {
 
@@ -82,11 +86,13 @@ public class DefaultMenuFragment extends BaseFragment<FragmentDefaultMenuBinding
 
     public void getData() {
         list = new ArrayList<>();
-        list.add(new ItemCategoryViewModel(new MenuCategory("cate 1", new ArrayList<Item>(), "1", "Menu0001", "001")));
-        list.add(new ItemCategoryViewModel(new MenuCategory("cate 2", new ArrayList<Item>(), "2", "Menu0001", "001")));
-        list.add(new ItemCategoryViewModel(new MenuCategory("cate 3", new ArrayList<Item>(), "3", "Menu0001", "001")));
-        list.add(new ItemCategoryViewModel(new MenuCategory("cate 4", new ArrayList<Item>(), "4","Menu0001", "001")));
-        list.add(new ItemCategoryViewModel(new MenuCategory("cate 5", new ArrayList<Item>(), "5","Menu0001", "001")));
+        // dump data
+        List<MenuCategory> categories = menu.getCategories();
+        for(MenuCategory mc : categories){
+            list.add(new ItemCategoryViewModel(mc));
+        }
+
+
     }
 
     private void setUpRecycleView(Context context) {
@@ -106,6 +112,10 @@ public class DefaultMenuFragment extends BaseFragment<FragmentDefaultMenuBinding
         public void onItemClick(MenuCategory category) {
 //            Toast.makeText(getActivity(), category.getCatename(), Toast.LENGTH_SHORT).show();
             Intent intent  = new Intent(getActivity(), DetailCategoryActivity.class);
+            Gson gson = new Gson();
+            String categoryGson = gson.toJson(category);
+            intent.putExtra("category", categoryGson);
+//            intent.putExtra("category", category );
             startActivity(intent);
         }
 
@@ -142,7 +152,6 @@ public class DefaultMenuFragment extends BaseFragment<FragmentDefaultMenuBinding
                 list.remove(i);
                 Toast.makeText(getActivity(), "delete " + i + " category name : " + category.getCatename(), Toast.LENGTH_SHORT).show();
                 showUndoMess(category.getCatename());
-
                 break;
             }
         }
@@ -168,5 +177,13 @@ public class DefaultMenuFragment extends BaseFragment<FragmentDefaultMenuBinding
 
         }
     }
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
 
 }

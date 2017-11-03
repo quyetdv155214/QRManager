@@ -5,13 +5,13 @@ import android.databinding.Bindable;
 import com.example.quyet.qrappmanager.model.Item;
 import com.example.quyet.qrappmanager.model.MenuCategory;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Quyet on 31/10/2017.
  */
-
-public class ItemCategoryViewModel extends BaseViewModel {
+public class ItemCategoryViewModel extends BaseViewModel  {
     private String catename;
     private List<Item> items;
     private String cateID;
@@ -37,7 +37,7 @@ public class ItemCategoryViewModel extends BaseViewModel {
     }
 
     public String getItemCount() {
-        return items.size() + "";
+        return items.size() + " item";
     }
 
     public MenuCategory getCategory() {
