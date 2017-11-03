@@ -1,5 +1,7 @@
 package com.example.quyet.qrappmanager.activity;
 
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,6 +43,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding, ActivityHome
 
     private void setEvent() {
         getBinding().rlMenu.setOnRippleCompleteListener(this);
+        getBinding().rlAccount.setOnRippleCompleteListener(this);
     }
 
     @Override
@@ -49,6 +52,34 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding, ActivityHome
             case R.id.rlMenu:
                 Intent intent = new Intent(this, MenuActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.rlAccount :
+                if(hasLogin()){
+                    gotoAccountScreen();
+                }else{
+                    Intent loginIntent = new Intent(this, LoginActivity.class);
+//        loginIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(loginIntent);
+                }
+                break;
+
         }
+    }
+
+    private void gotoLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
+        Log.d(TAG, "gotoLogin: ");
+    }
+
+    private void gotoAccountScreen() {
+
+    }
+
+    private boolean hasLogin() {
+
+        return false;
     }
 }

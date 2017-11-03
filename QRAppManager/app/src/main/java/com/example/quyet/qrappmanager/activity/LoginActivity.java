@@ -19,7 +19,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
 
     private static final String TAG = "loginActivity";
 
-
+    private ProgressDialog pDialog;
     @Override
     public int getLayoutId() {
         return R.layout.activity_login;
@@ -43,6 +43,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
     public void init(){
         getSupportActionBar().hide();
         setStatusBarTranslucent(true);
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
         setEvent();
         Log.d(TAG, "init: init done");
     }
@@ -83,10 +85,10 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
         return valid;
     }
 
-    @Override
-    public void onBackPressed() {
-        moveTaskToBack(true);
-    }
+//    @Override
+//    public void onBackPressed() {
+//        moveTaskToBack(true);
+//    }
     private void setEvent(){
 //        getBinding().rlLogin.setOnRippleCompleteListener(this);
         getBinding().rlLogin.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
@@ -96,13 +98,18 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
             }
         });
 
-        getBinding().linkSignup.setOnClickListener(new View.OnClickListener() {
+        getBinding().btnOrRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                changeToRegisterScreen();
             }
         });
 
+    }
+
+    private void changeToRegisterScreen() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 
 
@@ -133,5 +140,14 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
                     }
                 }, 3000);
 
+    }
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 }

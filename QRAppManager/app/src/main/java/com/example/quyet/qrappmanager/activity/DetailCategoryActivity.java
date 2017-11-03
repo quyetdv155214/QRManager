@@ -1,12 +1,9 @@
 package com.example.quyet.qrappmanager.activity;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,19 +11,23 @@ import com.example.quyet.qrappmanager.R;
 import com.example.quyet.qrappmanager.adapter.BaseRecyclerViewAdapter;
 import com.example.quyet.qrappmanager.adapter.BaseSingleTypeRecyclerViewAdapter;
 import com.example.quyet.qrappmanager.databinding.ActivityDetailCategoryBinding;
-import com.example.quyet.qrappmanager.fragment.DefaultMenuFragment;
 import com.example.quyet.qrappmanager.model.Item;
 import com.example.quyet.qrappmanager.model.MenuCategory;
 import com.example.quyet.qrappmanager.viewmodel.ActivityDetailCategoryViewModel;
-import com.example.quyet.qrappmanager.viewmodel.ItemCategoryViewModel;
 import com.example.quyet.qrappmanager.viewmodel.ItemViewModel;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryBinding, ActivityDetailCategoryViewModel> implements View.OnClickListener {
+    private static final String TAG = "detaiCategory";
     BaseSingleTypeRecyclerViewAdapter<ItemViewModel> adapter;
-    private List<ItemViewModel> list = new ArrayList<>();
+    private List<ItemViewModel> itemList;
+    private String cateName;
+    private String cateType;
+    private String menu;
+
     private boolean editMode = false;
     private String categoryId;
 
@@ -66,11 +67,14 @@ public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryB
     }
 
     private void getData() {
-        list.add(new ItemViewModel(new Item("mon thit 1", 23, 10, "so delicous")));
-        list.add(new ItemViewModel(new Item("mon thit 2", 23, 10, "so delicous")));
-        list.add(new ItemViewModel(new Item("mon thit 3", 23, 10, "so delicous")));
-        list.add(new ItemViewModel(new Item("mon thit 4", 23, 10, "so delicous")));
-        list.add(new ItemViewModel(new Item("mon thit 5", 23, 10, "so delicous")));
+        itemList = new ArrayList<>();
+//        MenuCategory category = (MenuCategory)getIntent().getSerializableExtra("category");
+        Gson gson = new Gson();
+        MenuCategory  category = gson.fromJson(getIntent().getStringExtra("category"), MenuCategory.class);
+        Log.d(TAG, "getData: category " + category.toString());
+        for(Item i : category.getItems()){
+            itemList.add(new ItemViewModel(i));
+        }
     }
 
     @Override
@@ -119,7 +123,7 @@ public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryB
     private void setUpRecycleView(Context context) {
         adapter = new BaseSingleTypeRecyclerViewAdapter<>(context, R.layout.default_item);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        adapter.addAll(list);
+        adapter.addAll(itemList);
         adapter.setPresenter(new ItemListener());
 
 
