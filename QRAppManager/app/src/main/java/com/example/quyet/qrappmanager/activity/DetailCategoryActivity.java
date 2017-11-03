@@ -153,9 +153,16 @@ public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryB
         startActivity(intent);
     }
 
-    public class ItemListener implements BaseRecyclerViewAdapter.Presenter {
+    public class ItemListener implements  BaseRecyclerViewAdapter.Presenter  {
         public void onItemClick(Item item) {
-            
+
+            Intent intent = new Intent(getApplicationContext(), DetailItemActivity.class);
+
+            Gson gson = new Gson();
+            String itemJson = gson.toJson(item);
+
+            intent.putExtra("itemJson", itemJson);
+            startActivity(intent);
         }
         public void onEditClick(Item item){
             Toast.makeText(DetailCategoryActivity.this, "click edit", Toast.LENGTH_SHORT).show();
