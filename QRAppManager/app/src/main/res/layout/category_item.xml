@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
@@ -44,6 +45,7 @@
 
             <com.andexert.library.RippleView
                 android:id="@+id/rlEdit"
+                app:rv_rippleDuration="50"
                 android:layout_width="50dp"
                 android:layout_height="50dp">
                 <ImageView
@@ -63,6 +65,7 @@
                 android:layout_height="match_parent"/>
             <com.andexert.library.RippleView
                 android:id="@+id/rlDelete"
+                app:rv_rippleDuration="50"
                 android:layout_width="50dp"
                 android:layout_height="50dp">
                 <ImageView

@@ -8,82 +8,157 @@
             name="viewModel"
             type="com.example.quyet.qrappmanager.viewmodel.ActivityLoginViewModel"/>
     </data>
-<ScrollView android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
+<!--<ScrollView android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:fitsSystemWindows="true">-->
 
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingTop="56dp"-->
+        <!--android:paddingLeft="24dp"-->
+        <!--android:paddingRight="24dp">-->
+
+        <!--<ImageView android:src="@drawable/ic_android_black_24dp"-->
+            <!--android:id="@+id/iv_logo"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="72dp"-->
+            <!--android:layout_marginBottom="24dp"-->
+            <!--android:layout_gravity="center_horizontal" />-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp">-->
+            <!--<EditText android:id="@+id/input_email"-->
+
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:inputType="textEmailAddress"-->
+                <!--android:hint="Email" />-->
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp">-->
+            <!--<EditText android:id="@+id/input_password"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:inputType="textPassword"-->
+                <!--android:hint="Password"/>-->
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+        <!--<com.andexert.library.RippleView-->
+            <!--android:id="@+id/rl_login"-->
+            <!--android:background="@drawable/rectangle_curved_stroke_white"-->
+            <!--android:layout_marginTop="24dp"-->
+            <!--android:layout_marginBottom="24dp"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:rv_rippleDuration="100"-->
+            <!--app:rv_zoomDuration="50"-->
+            <!--app:rv_zoomScale="0.95"-->
+            <!--app:rv_zoom="true"-->
+            <!--app:rv_color="@color/colorPrimary">-->
+            <!--<TextView-->
+                <!--android:text="Login"-->
+                <!--android:textAllCaps="true"-->
+                <!--android:padding="12dp"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+        <!--</com.andexert.library.RippleView>-->
+
+        <!--<TextView-->
+            <!--android:textColor="@color/wallet_holo_blue_light"-->
+            <!--android:id="@+id/link_signup"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="24dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="No account yet? Create one"-->
+            <!--android:textSize="16dip" />-->
+
+    <!--</LinearLayout>-->
+<!--</ScrollView>-->
     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/bg_login"
+        android:gravity="center"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp">
+        android:padding="10dp" >
 
-        <ImageView android:src="@drawable/ic_android_black_24dp"
-            android:id="@+id/iv_logo"
-            android:layout_width="150dp"
-            android:layout_height="72dp"
-            android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal" />
-
-        <android.support.design.widget.TextInputLayout
-
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_email"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" >
 
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/inputEmail"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:hint="Email" />
-        </android.support.design.widget.TextInputLayout>
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/input_login"
+                android:textColorHint="@color/input_login_hint" />
 
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_password"
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/inputPassword"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="Password"
                 android:inputType="textPassword"
-                android:hint="Password"/>
-        </android.support.design.widget.TextInputLayout>
+                android:padding="10dp"
+                android:maxLines="1"
+                android:textColor="@color/input_login"
+                android:textColorHint="@color/input_login_hint" />
 
-
-        <com.andexert.library.RippleView
-            android:id="@+id/rl_login"
-            android:background="@drawable/rectangle_curved_stroke_white"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            app:rv_rippleDuration="100"
-            app:rv_zoomDuration="50"
-            app:rv_zoomScale="0.95"
-            app:rv_zoom="true"
-            app:rv_color="@color/colorPrimary">
-            <TextView
-                android:text="Login"
-                android:padding="12dp"
-                android:layout_centerHorizontal="true"
+            <com.andexert.library.RippleView
+                android:layout_marginTop="20dip"
+                android:id="@+id/rlLogin"
+                app:rv_rippleDuration="100"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </com.andexert.library.RippleView>
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/link_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:gravity="center"
-            android:text="No account yet? Create one"
-            android:textSize="16dip" />
+                    android:background="@color/btn_login_bg"
+                    android:text="Login"
+                    android:textColor="@color/btn_login" />
+
+            </com.andexert.library.RippleView>
+
+
+            <Button
+                android:id="@+id/btnOrRegister"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dip"
+                android:background="@null"
+                android:text="Or register"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+        </LinearLayout>
 
     </LinearLayout>
-</ScrollView>
 </layout>

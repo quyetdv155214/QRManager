@@ -10,9 +10,9 @@
             name="layoutManager"
             type="android.support.v7.widget.RecyclerView.LayoutManager" />
     </data>
+    <!--android:background="@color/cardview_dark_background"-->
 
 <RelativeLayout
-    android:background="@color/cardview_dark_background"
     android:id="@+id/rlDefaultMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
