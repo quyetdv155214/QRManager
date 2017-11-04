@@ -78,7 +78,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
     public void onLoginSuccess(String managerId) {
 //        getBinding().rlLogin.setEnabled(true);
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
