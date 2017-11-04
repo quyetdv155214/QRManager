@@ -55,10 +55,11 @@ public class DefaultMenuViewPagerAdapter extends FragmentPagerAdapter {
         List<MenuCategory> listCategories = new ArrayList<>();
         ArrayList<Item> items = new ArrayList<>();
 
-        items.add(new Item("mon an 1", 16, 1,"so ngon"));
-        items.add(new Item("mon an 2", 16, 1,"so ngon"));
-        items.add(new Item("mon an 3", 16, 1,"so ngon"));
-        items.add(new Item("mon an 4", 16, 1,"so ngon"));
+        items.add(new Item("mon an 1", 16, 1,"so ngon", "mon an lam tu gao"));
+        items.add(new Item("mon an 2", 16, 1,"so ngon", "mon an lam tu gao"));
+        items.add(new Item("mon an 3", 16, 1,"so ngon", "mon an lam tu gao"));
+        items.add(new Item("mon an 4", 16, 1,"so ngon", "mon an lam tu gao"));
+        items.add(new Item("mon an 5", 16, 1,"so ngon", "mon an lam tu gao"));
         listCategories.add(new MenuCategory("cate 1", items, "1", "Menu0001", "001"));
         listCategories.add(new MenuCategory("cate 2", items, "2", "Menu0001", "001"));
         listCategories.add(new MenuCategory("cate 3", items, "3", "Menu0001", "001"));

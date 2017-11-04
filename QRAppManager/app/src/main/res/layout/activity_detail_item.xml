@@ -28,7 +28,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/ivDefaultAddCateBack"
+                    android:id="@+id/ivDefaultItemDetailBack"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:padding="5dp"
@@ -63,6 +63,7 @@
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
         <RelativeLayout
+            android:padding="8dp"
             android:layout_below="@id/tbItemDetail"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -130,6 +131,7 @@
                     />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/loItemDes"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/loItemPrice"
@@ -152,6 +154,29 @@
                     android:layout_height="wrap_content"
                     android:hint="enter descreption"
                     />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/loItemDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Item info :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etIteminfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|left"
+                    android:hint="enter info"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:maxLines="5"
+                    android:padding="10dp"
+                    android:scrollbars="vertical" />
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>

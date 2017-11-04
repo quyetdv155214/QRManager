@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.quyet.qrappmanager.viewmodel.ActivityCreateMenuViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.quyet.qrappmanager.activity.CreateMenuActivity">
+        <android.support.v7.widget.Toolbar
+            android:background="@color/colorPrimary"
+            android:id="@+id/tbAddMenu"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivAddMenuBack"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="5dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_chevron_left_white_24dp" />
+                <TextView
+                    android:textColor="@color/white"
+                    android:text="Add Menu"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="22sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@drawable/ic_check_white_24dp"
+                    android:id="@+id/ivAddMenuOK"
+                    android:padding="5dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignTop="@+id/ivbtnDel"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_below="@id/tbAddMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rlAddMenuPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivMenuPic"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_image_black_24dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                />
+            <TextView
+                android:layout_below="@id/ivMenuPic"
+                android:text="choose image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_toEndOf="@id/rlAddMenuPic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Menu Name :"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/etMenuName"
+                    android:maxLines="1"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/rlAddMenuPic"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Describe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/etMenuDes"
+                android:maxLines="5"
+                android:lines="5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    </RelativeLayout>
+</layout>
