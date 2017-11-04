@@ -95,8 +95,6 @@ public class DetailCategoryActivity extends BaseActivity<ActivityDetailCategoryB
         switch (v.getId()){
             case R.id.ivEdit :
 
-
-
                 if(!editMode){
                     getBinding().etCateTitle.setEnabled(true);
                     getBinding().spCateMenu.setEnabled(true);

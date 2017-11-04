@@ -2,6 +2,7 @@ package com.example.quyet.qrappmanager.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Toast;
 
@@ -48,13 +49,14 @@ public class DetailItemActivity extends BaseActivity<ActivityDetailItemBinding, 
     private void setEvent() {
         getBinding().ivEditItem.setOnClickListener(this);
         getBinding().ivDelItem.setOnClickListener(this);
-        getBinding().ivDefaultAddCateBack.setOnClickListener(this);
+        getBinding().ivDefaultItemDetailBack.setOnClickListener(this);
     }
 
     private void setView() {
         getBinding().etItemName.setText(item.getItemName());
         getBinding().etItemPrice.setText(item.getItemPrice() +"");
         getBinding().etItemDes.setText(item.getItemDes());
+        getBinding().etItemPrice.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
     }
 
     public void getData() {
@@ -66,21 +68,35 @@ public class DetailItemActivity extends BaseActivity<ActivityDetailItemBinding, 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.ivEdit:
-                if(editMode){
+            case R.id.ivEditItem:
+                if(!editMode){
                     getBinding().etItemName.setEnabled(true);
                     getBinding().etItemPrice.setEnabled(true);
                     getBinding().etItemDes.setEnabled(true);
+                    getBinding().etIteminfo.setEnabled(true);
+                    getBinding().ivEditItem.setImageResource(R.drawable.ic_save_white_24dp);
                     editMode = true;
                 }else{
                     getBinding().etItemName.setEnabled(false);
                     getBinding().etItemPrice.setEnabled(false);
                     getBinding().etItemDes.setEnabled(false);
+                    getBinding().etIteminfo.setEnabled(false);
+
                     editMode = false;
                     updateItem();
                 }
                 break;
+            case R.id.ivDelItem:
+                deleteItem();
+                break;
+            case R.id.ivDefaultItemDetailBack :
+                onBackPressed();
+                break;
         }
+    }
+
+    private void deleteItem() {
+        Toast.makeText(this, "deleteItem", Toast.LENGTH_SHORT).show();
     }
 
     private void updateItem() {

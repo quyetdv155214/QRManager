@@ -13,16 +13,18 @@ public class Item {
     private float itemPrice;
     private float itemDiscount;
     private String itemDes;
+    private String itemInfo;
     private List<String> imageURL;
 
 
 
-    public Item( String itemName, float itemPrice, float itemDiscount, String itemDes) {
+    public Item( String itemName, float itemPrice, float itemDiscount, String itemDes, String itemInfo) {
         this.itemId = UUID.randomUUID().toString();;;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemDiscount = itemDiscount;
         this.itemDes = itemDes;
+        this.itemInfo = itemInfo;
     }
 
     public Item(String itemName, float itemPrice, float itemDiscount, String itemDes, List<String> imageURL) {
@@ -31,6 +33,14 @@ public class Item {
         this.itemDiscount = itemDiscount;
         this.itemDes = itemDes;
         this.imageURL = imageURL;
+    }
+
+    public String getItemInfo() {
+        return itemInfo;
+    }
+
+    public void setItemInfo(String itemInfo) {
+        this.itemInfo = itemInfo;
     }
 
     public String getItemId() {
