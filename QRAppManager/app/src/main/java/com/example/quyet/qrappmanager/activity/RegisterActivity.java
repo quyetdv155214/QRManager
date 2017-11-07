@@ -149,7 +149,6 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Acti
         } else if(!password.equals(password2)){
             getBinding().etRPasswordAgain.setError("Password must be the same");
             check =false;
-
         }
         if (!check){
             getBinding().btnRegister.setEnabled(true);
