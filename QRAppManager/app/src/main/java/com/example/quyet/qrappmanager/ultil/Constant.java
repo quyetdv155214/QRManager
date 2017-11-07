@@ -21,4 +21,9 @@ public class Constant {
     public static final String INTERNET_ERROR ="Weak or no internet" ;
     public static final String EXCEPTION_TASK_HAVE_NULL_LOCAL_ID = "Can't delete this task\nThis task have null local id";
     public static final String BACK_SPACE = " ";
+    public static final String MENUID_SHAREKEY = "menuid_sharekey";
+    public static final String PASS_CATEGORYMODEL = "pass_categorymodel";
+    public static final String PASS_ITEMODEL = "pass_itemmodel";
+    public static final String PASS_MENUID = "pass_menuid";
+    public static final String ADD_ITEM = "add_item";
 }

@@ -44,7 +44,11 @@ public class BaseSingleTypeRecyclerViewAdapter<T> extends BaseRecyclerViewAdapte
         listItem.addAll(listViewModel);
         notifyDataSetChanged();
     }
-
+    public void deleteAll(){
+        for(int i = 0 ; i < listItem.size(); i ++ ){
+            listItem.remove(i);
+        }
+    }
 
     public void set(List<T> listViewModel){
         listItem = listViewModel;

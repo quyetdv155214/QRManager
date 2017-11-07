@@ -1,37 +1,60 @@
 package com.example.quyet.qrappmanager.adapter;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 
+import com.example.quyet.qrappmanager.DBContext;
+import com.example.quyet.qrappmanager.activity.LoginActivity;
 import com.example.quyet.qrappmanager.fragment.BaseFragment;
 import com.example.quyet.qrappmanager.fragment.DefaultMenuFragment;
 import com.example.quyet.qrappmanager.model.Item;
 import com.example.quyet.qrappmanager.model.Menu;
 import com.example.quyet.qrappmanager.model.MenuCategory;
+import com.example.quyet.qrappmanager.networks.NetContext;
+import com.example.quyet.qrappmanager.networks.jsonmodel.MenuResponseJson;
+import com.example.quyet.qrappmanager.networks.services.MenuService;
 import com.example.quyet.qrappmanager.viewmodel.ItemCategoryViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Khuong Duy on 9/25/2017.
  */
 
 public class DefaultMenuViewPagerAdapter extends FragmentPagerAdapter {
+    private static final String TAG = "menu_view_pager";
     private List<BaseFragment> list = new ArrayList<>();
+
 
     public DefaultMenuViewPagerAdapter(FragmentManager fm) {
         super(fm);
+        setView();
         addTab();
 
     }
-    private  void addTab(){
-        List<Menu> menu = getMenu();
-        for (Menu m : menu){
+
+    private void setView() {
+
+    }
+
+    private void addTab() {
+//        getMenu();
+        Log.d(TAG, "addTab: " + DBContext.instance.getListMenu().size());
+        for (Menu m : DBContext.instance.getListMenu()) {
             DefaultMenuFragment fragment1 = new DefaultMenuFragment();
             fragment1.setFragmentTitle(m.getMenuName());
+            Log.d(TAG, "addTab: " + m.getMenuId());
             fragment1.setMenu(m);
+//            Log.d(TAG, "addTab: " +m.toString());
             list.add(fragment1);
         }
     }
@@ -50,24 +73,13 @@ public class DefaultMenuViewPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return list.size();
     }
-    public List<Menu> getMenu(){
-        List<Menu> listMenu = new ArrayList<>();
-        List<MenuCategory> listCategories = new ArrayList<>();
-        ArrayList<Item> items = new ArrayList<>();
 
-        items.add(new Item("mon an 1", 16, 1,"so ngon", "mon an lam tu gao"));
-        items.add(new Item("mon an 2", 16, 1,"so ngon", "mon an lam tu gao"));
-        items.add(new Item("mon an 3", 16, 1,"so ngon", "mon an lam tu gao"));
-        items.add(new Item("mon an 4", 16, 1,"so ngon", "mon an lam tu gao"));
-        items.add(new Item("mon an 5", 16, 1,"so ngon", "mon an lam tu gao"));
-        listCategories.add(new MenuCategory("cate 1", items, "1", "Menu0001", "001"));
-        listCategories.add(new MenuCategory("cate 2", items, "2", "Menu0001", "001"));
-        listCategories.add(new MenuCategory("cate 3", items, "3", "Menu0001", "001"));
-        listCategories.add(new MenuCategory("cate 4", items, "4","Menu0001", "001"));
-        listCategories.add(new MenuCategory("cate 5", items, "5","Menu0001", "001"));
 
-        Menu menu = new Menu("Menu 21", "menu0001", "res11", "menu ngon", listCategories);
-        listMenu.add(menu);
-        return listMenu;
+
+
+    public void setList(List<BaseFragment> list) {
+        this.list = list;
     }
+
+
 }

@@ -71,6 +71,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Acti
         getBinding().btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 sendRegister();
             }
 
@@ -82,6 +83,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Acti
         if (!validateData()){
             return;
         }
+        pDialog.show();
         RegisterService registerService = NetContext.instance.create(RegisterService.class);
 
         MediaType jsonType = MediaType.parse("application/json");

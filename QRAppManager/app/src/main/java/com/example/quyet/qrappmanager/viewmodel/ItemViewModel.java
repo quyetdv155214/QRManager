@@ -17,15 +17,16 @@ public class ItemViewModel extends BaseViewModel{
     private List<String> imageURL;
     private Item item;
 
-    public ItemViewModel(Item item) {
-        this.item = item;
-        this.itemId = item.getItemId();
-        this.itemName = item.getItemName();
-        this.itemPrice = item.getItemPrice();
-        this.itemDiscount = item.getItemDiscount();
-        this.itemDes = item.getItemDes();
-        this.imageURL = item.getImageURL();
+    public ItemViewModel() {
+    }
 
+    public ItemViewModel(String itemId, String itemName, float itemPrice, float itemDiscount, String itemDes, List<String> imageURL) {
+        this.itemId = itemId;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.itemDiscount = itemDiscount;
+        this.itemDes = itemDes;
+        this.imageURL = imageURL;
     }
 
     public String getItemId() {

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <import type="android.view.View"/>
         <variable
             name="viewModel"
             type="com.example.quyet.qrappmanager.viewmodel.ActivityAddCategoryViewModel"/>
@@ -48,15 +49,6 @@
                     android:layout_alignParentRight="true"
                     android:layout_width="48dp"
                     android:layout_height="48dp" />
-                <ImageView
-                    android:layout_toStartOf="@id/ivbtnOK"
-                    android:src="@drawable/ic_delete_white_24dp"
-                    android:id="@+id/ivbtnDel"
-                    android:padding="8dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="8dp"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp" />
             </RelativeLayout>
 
 
@@ -86,29 +78,31 @@
                 android:text="@string/type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Spinner
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:layout_height="30dp"
-                android:id="@+id/spCateType"
-                android:layout_width="match_parent"
-                android:layout_below="@+id/tvCateType"
-                android:layout_alignParentStart="true" />
-            <TextView
-                android:layout_below="@id/spCateType"
-                android:layout_marginTop="15dp"
-                android:id="@+id/tvCateMenu"
-                android:text="Menu"
+           <EditText
+               android:id="@+id/etCateType"
+               android:layout_below="@id/tvCateType"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:visibility="@{viewModel.loading == true ? View.VISIBLE: View.GONE}"
+            android:layout_below="@id/tbAddCategory"
+            android:background="#88FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:id="@+id/pbAddCategory"
+                android:layout_marginTop="120dp"
+                android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <Spinner
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:layout_height="30dp"
-                android:id="@+id/spCateMenu"
-                android:layout_below="@id/tvCateMenu"
-                android:layout_width="match_parent" />
-
+            <TextView
+                android:textColor="@color/colorAccentLighter"
+                android:layout_below="@id/pbAddCategory"
+                android:layout_centerHorizontal="true"
+                android:text="Adding..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
     </RelativeLayout>
 </layout>

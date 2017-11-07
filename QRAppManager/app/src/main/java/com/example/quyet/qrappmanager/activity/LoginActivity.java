@@ -29,7 +29,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLoginViewModel>  {
-    public String managerId;
+    public static String managerId ="thisisdemoid_3";
     public String resID;
     private static final String TAG = "loginActivity";
 
@@ -77,6 +77,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
 
     public void onLoginSuccess(String managerId) {
 //        getBinding().rlLogin.setEnabled(true);
+        Toast.makeText(this, "manager id "+ managerId, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
@@ -176,9 +177,11 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, ActivityLo
                 pDialog.dismiss();
 
                 LoginResponseJson loginResponseJson = response.body();
+                Log.d(TAG, "onResponse: body" + loginResponseJson);
                 if(loginResponseJson !=null){
                     if(response.code() ==200){
                         managerId = loginResponseJson.getManagerId();
+                        Log.d(TAG, "onResponse: login managerid "+ managerId);
                         onLoginSuccess(managerId);
                     }
                 }else {

@@ -28,6 +28,7 @@ public class ItemCategoryViewModel extends BaseViewModel  {
         this.cateID = category.getCateID();
     }
 
+
     public String getCateID() {
         return cateID;
     }
@@ -62,5 +63,17 @@ public class ItemCategoryViewModel extends BaseViewModel  {
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    @Override
+    public String toString() {
+        return "ItemCategoryViewModel{" +
+                "catename='" + catename + '\'' +
+                ", items=" + items +
+                ", cateID='" + cateID + '\'' +
+                ", menuId='" + menuId + '\'' +
+                ", cateType='" + cateType + '\'' +
+                ", category=" + category +
+                '}';
     }
 }

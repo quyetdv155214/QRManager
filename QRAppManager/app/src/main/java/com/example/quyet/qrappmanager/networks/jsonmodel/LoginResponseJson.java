@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class LoginResponseJson {
-    @SerializedName("manager id")
+    @SerializedName("manager_id")
     private String managerId;
 
     public String getManagerId() {

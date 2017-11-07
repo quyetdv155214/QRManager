@@ -2,148 +2,147 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="com.example.quyet.qrappmanager.viewmodel.ActivityDetailCategoryViewModel"/>
+            type="com.example.quyet.qrappmanager.viewmodel.ActivityDetailCategoryViewModel" />
     </data>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.quyet.qrappmanager.activity.DetailCategoryActivity">
-
-    <android.support.v7.widget.Toolbar
-        android:background="@color/colorPrimary"
-        android:id="@+id/tbAddCategory"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="24dp"
-        app:contentInsetStart="0dp"
-        app:layout_collapseMode="pin"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        android:layout_height="match_parent"
+        tools:context="com.example.quyet.qrappmanager.activity.DetailCategoryActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:elevation="10dp"
+            android:id="@+id/tbAddCategory"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorPrimary"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivDefaultAddCateBack"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_chevron_left_white_24dp"
+                    android:padding="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Category"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/ivCategoryEdit"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_edit_white_24dp" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
         <RelativeLayout
+            android:elevation="6dp"
+            android:background="#33638D84"
+            android:padding="8dp"
+            android:id="@+id/rlCateInfo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tbAddCategory">
+            <LinearLayout
+                android:id="@+id/llCategoryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/tvCateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category Name:" />
 
-            <ImageView
-                android:id="@+id/ivDefaultAddCateBack"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:padding="5dp"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_chevron_left_white_24dp" />
-            <TextView
-                android:textColor="@color/white"
-                android:text="Category name"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:textSize="22sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:src="@drawable/ic_edit_white_24dp"
-                android:id="@+id/ivEdit"
-                android:padding="5dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_width="48dp"
-                android:layout_height="48dp" />
-            <ImageView
+                <EditText
+                    android:textColor="@color/colorPrimaryLighter"
+                    android:id="@+id/etCateTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="@{viewModel.categoryViewModel.catename}" />
+            </LinearLayout>
 
-                android:layout_toStartOf="@id/ivEdit"
-                android:src="@drawable/ic_delete_white_24dp"
-                android:id="@+id/ivbtnDel"
-                android:padding="8dp"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:layout_width="48dp"
-                android:layout_height="48dp" />
+            <LinearLayout
+                android:id="@+id/loType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llCategoryTitle"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/tvCateType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Category Type:" />
+
+                <EditText
+                    android:textColor="@color/colorPrimaryLighter"
+                    android:id="@+id/etCateTypeDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:enabled="false"
+                    android:text="@{viewModel.categoryViewModel.cateType}" />
+            </LinearLayout>
         </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
-    <RelativeLayout
-        android:id="@+id/rlCateInfo"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_below="@id/tbAddCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_marginTop="15dp"
-            android:id="@+id/tvCateTitle"
-            android:text="@string/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:enabled="false"
-            android:id="@+id/etCateTitle"
-            android:layout_below="@id/tvCateTitle"
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
-        <LinearLayout
-            android:id="@+id/loType"
-            android:layout_below="@id/etCateTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="15dp"
-                android:id="@+id/tvCateType"
-                android:text="@string/type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
-            <Spinner
-                android:id="@+id/spCateType"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_alignParentStart="true"
-
-
-                android:layout_marginTop="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_below="@id/loType"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="15dp"
-                android:id="@+id/tvCateMenu"
-                android:text="Menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <Spinner
-                android:id="@+id/spCateMenu"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="15dp" />
-        </LinearLayout>
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:padding="8dp"
-        android:layout_below="@id/rlCateInfo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvItem"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@id/rlCateInfo"></android.support.v7.widget.RecyclerView>
 
-        </android.support.v7.widget.RecyclerView>
 
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fbAddItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="15dp"
+            android:src="@drawable/ic_add_white_24dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tbAddCategory"
+            android:background="#22000000"
+            android:visibility="@{viewModel.loading == true ? View.VISIBLE : View.GONE }">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36dp" />
+        </RelativeLayout>
     </RelativeLayout>
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabAddItem"
-        android:src="@drawable/ic_add_white_24dp"
-        android:layout_margin="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
 </layout>

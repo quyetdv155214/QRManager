@@ -1,5 +1,7 @@
 package com.example.quyet.qrappmanager.model;
 
+import com.example.quyet.qrappmanager.ultil.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,7 @@ import java.util.List;
 public class Menu {
     private String menuName;
     private String menuId;
-    private String resId;
+    private String managerID;
     private String describe;
     private List<MenuCategory> categories;
 
@@ -18,18 +20,24 @@ public class Menu {
     public Menu(String menuName, String menuId, String resId, String describe, List<MenuCategory> categories) {
         this.menuName = menuName;
         this.menuId = menuId;
-        this.resId = resId;
+        this.managerID = managerID;
         this.describe = describe;
         this.categories = categories;
     }
 
-    public Menu(String menuName, String menuId, String resId, String describe) {
+    public Menu(String menuName, String menuId, String managerID, String describe) {
         this.menuName = menuName;
         this.menuId = menuId;
-        this.resId = resId;
+        this.managerID = managerID;
         this.describe = describe;
-        this.categories = new ArrayList<>();
     }
+
+    public Menu(String menuName, String managerID, String describe) {
+        this.menuName = menuName;
+        this.managerID = managerID;
+        this.describe = describe;
+    }
+
 
     public String getMenuName() {
         return menuName;
@@ -47,12 +55,12 @@ public class Menu {
         this.menuId = menuId;
     }
 
-    public String getResId() {
-        return resId;
+    public String getManagerID() {
+        return managerID;
     }
 
-    public void setResId(String resId) {
-        this.resId = resId;
+    public void setManagerID(String resId) {
+        this.managerID = managerID;
     }
 
     public String getDescribe() {

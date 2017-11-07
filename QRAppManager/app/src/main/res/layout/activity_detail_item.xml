@@ -14,15 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.quyet.qrappmanager.activity.DetailItemActivity">
+
         <android.support.v7.widget.Toolbar
-            android:background="@color/colorPrimary"
             android:id="@+id/tbItemDetail"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="24dp"
+            android:background="@color/colorPrimary"
             app:contentInsetStart="0dp"
             app:layout_collapseMode="pin"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -31,152 +33,172 @@
                     android:id="@+id/ivDefaultItemDetailBack"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:padding="5dp"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/ic_chevron_left_white_24dp" />
-                <TextView
-                    android:textColor="@color/white"
-                    android:text="Item Detail"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="22sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <ImageView
-                    android:src="@drawable/ic_edit_white_24dp"
-                    android:id="@+id/ivEditItem"
-                    android:padding="5dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp" />
-                <ImageView
+                    android:background="@drawable/ic_chevron_left_white_24dp"
+                    android:padding="5dp" />
 
-                    android:layout_toStartOf="@id/ivEditItem"
-                    android:src="@drawable/ic_delete_white_24dp"
-                    android:id="@+id/ivDelItem"
-                    android:padding="8dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="8dp"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp" />
-            </RelativeLayout>
-        </android.support.v7.widget.Toolbar>
-        <RelativeLayout
-            android:padding="8dp"
-            android:layout_below="@id/tbItemDetail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <RelativeLayout
-                android:id="@+id/rlAddPic"
-                android:layout_marginStart="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/ivPic"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_image_black_24dp"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    />
                 <TextView
-                    android:layout_below="@id/ivPic"
-                    android:text="choose image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    />
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Item Detail"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/ivEditItem"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_edit_white_24dp" />
+
+                <ImageView
+
+                    android:id="@+id/ivDelItem"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@id/ivEditItem"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_delete_white_24dp" />
             </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tbItemDetail"
+            android:padding="8dp">
+
             <RelativeLayout
-                android:layout_toEndOf="@id/rlAddPic"
+                android:id="@+id/rlAddPic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <ImageView
+                    android:id="@+id/ivPic"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_image_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivPic"
+                    android:text="choose image" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/rlAddPic">
+
                 <LinearLayout
-                    android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
                     <TextView
-                        android:text="Item Name :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:text="Item Name :" />
+
                     <EditText
-                        android:enabled="false"
                         android:id="@+id/etItemName"
-                        android:maxLines="1"
-                        android:layout_weight="5"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:enabled="false"
+                        android:maxLines="1"
+                        android:text="@{viewModel.itemViewModel.itemName}" />
                 </LinearLayout>
 
             </RelativeLayout>
+
             <LinearLayout
                 android:id="@+id/loItemPrice"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/rlAddPic"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlAddPic"
+                android:layout_marginTop="10dp">
+
                 <TextView
-                    android:text="Item Price :"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
-                <EditText
-                    android:enabled="false"
-                    android:id="@+id/etItemPrice"
-                    android:layout_weight="6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Item Price :" />
+
+                <EditText
+                    android:id="@+id/etItemPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:enabled="false"
                     android:hint="Price"
-                    />
+                    android:text="@{viewModel.itemViewModel.itemPrice}" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/loItemDes"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/loItemPrice"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loItemPrice"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
                 <TextView
-                    android:text="Item Descripe :"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Item Descripe :" />
+
                 <EditText
-                    android:enabled="false"
-                    android:maxLines="5"
-                    android:padding="10dp"
-                    android:lines="5"
-                    android:inputType="textMultiLine"
                     android:id="@+id/etItemDes"
-                    android:gravity="top|left"
-                    android:scrollbars="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="enter descreption"
-                    />
+                    android:enabled="false"
+                    android:gravity="top|left"
+                    android:hint="Enter descreption"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:maxLines="5"
+                    android:padding="10dp"
+                    android:scrollbars="vertical"
+                    android:text="@{viewModel.itemViewModel.itemDes}" />
             </LinearLayout>
+
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/loItemDes"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loItemDes"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
                 <TextView
-                    android:text="Item info :"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Item info :" />
 
                 <EditText
                     android:id="@+id/etIteminfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:enabled="false"
                     android:gravity="top|left"
-                    android:hint="enter info"
+                    android:hint="Enter info"
                     android:inputType="textMultiLine"
                     android:lines="5"
                     android:maxLines="5"
                     android:padding="10dp"
-                    android:scrollbars="vertical" />
+                    android:scrollbars="vertical"
+                    android:text="@{viewModel.itemViewModel.itemDes}" />
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.quyet.qrappmanager.viewmodel.ItemViewModel">
+
+        </variable>
+        <variable
+            name="listener"
+            type="com.example.quyet.qrappmanager.activity.DetailCategoryActivity.ItemListener"/>
+
+    </data>
+<RelativeLayout
+    android:onClick="@{()-> listener.onItemClick(viewModel)}"
+    android:layout_width="match_parent"
+    android:layout_height="72dp">
+    <ImageView
+        android:padding="16dp"
+        android:id="@+id/ivPic"
+        android:src="@drawable/ic_cake"
+        android:layout_width="72dp"
+        android:layout_height="72dp" />
+    <RelativeLayout
+        android:layout_toEndOf="@id/ivPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivDeleteItem"
+            android:background="@color/colorAccentLightest"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_delete_white_24dp"
+            android:padding="10dp"
+            android:layout_width="56dp"
+            android:layout_height="72dp" />
+        <RelativeLayout
+            android:layout_toLeftOf="@id/ivDeleteItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:text="@{viewModel.itemName}"
+                android:id="@+id/tvItemName"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginBottom="8dp"
+                android:layout_alignParentBottom="true"
+                android:text="@{viewModel.itemPrice}"
+                android:id="@+id/tvItemrPice"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <View
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</RelativeLayout>
+</layout>

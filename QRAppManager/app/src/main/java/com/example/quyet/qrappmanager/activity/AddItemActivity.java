@@ -3,6 +3,7 @@ package com.example.quyet.qrappmanager.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 
 import com.example.quyet.qrappmanager.R;
@@ -13,7 +14,7 @@ import com.example.quyet.qrappmanager.viewmodel.ActivityAddItemViewModel;
 
 
 public class AddItemActivity extends BaseActivity<ActivityAddItemBinding, ActivityAddItemViewModel> implements View.OnClickListener{
-
+    private static final String TAG = "AddItemActivity";
 
     @Override
     public int getLayoutId() {
@@ -40,7 +41,7 @@ public class AddItemActivity extends BaseActivity<ActivityAddItemBinding, Activi
         setStatusBarTranslucent(true);
         setUpView();
         setEvent();
-        getData();
+
     }
 
     private void setEvent() {
@@ -50,10 +51,21 @@ public class AddItemActivity extends BaseActivity<ActivityAddItemBinding, Activi
 
     private Item getData() {
         String itemName = getBinding().etItemName.getText().toString();
-        float itemPrice= Float.parseFloat(getBinding().etItemPrice.getText().toString());
+
+        float itemPrice =0;
+        try{
+            itemPrice = Float.parseFloat(getBinding().etItemPrice.getText().toString());
+        }catch (Exception e){
+            getBinding().etItemPrice.setError("Enter price");
+        }
+
         String itemDes= getBinding().etItemDes.getText().toString();
         String itemInfo = getBinding().etIteminfo.getText().toString();
-        return null;
+        Log.d(TAG, "getData: ");
+        if(itemName.isEmpty()){
+            getBinding().etItemName.setError("Require Item Name");
+        }
+        return new Item(itemName,itemPrice,0,itemDes,itemInfo);
     }
 
     private void setUpView() {

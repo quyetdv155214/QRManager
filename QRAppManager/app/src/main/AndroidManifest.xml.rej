@@ -1,0 +1,22 @@
+diff a/QRAppManager/app/src/main/AndroidManifest.xml b/QRAppManager/app/src/main/AndroidManifest.xml	(rejected hunks)
+@@ -14,16 +14,20 @@
+          android:supportsRtl="true"
+          android:theme="@style/AppTheme">
+          <activity android:name=".activity.HomeActivity">
+++<<<<<<< HEAD
+ +        </activity>
+ +        <activity android:name=".activity.LoginActivity">
+++=======
++             `
+++>>>>>>> b5e3dc1c7a2a1c9a99806cdf933d00b5be3997ab
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+ +
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+ -        </activity>
+ -        <activity android:name=".activity.LoginActivity">
+ -
+          </activity>
+          <activity android:name=".activity.MenuActivity" />
+          <activity android:name=".activity.ItemActivity" />
